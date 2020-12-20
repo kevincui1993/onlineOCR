@@ -1,16 +1,21 @@
 doctype html
-head
-  title Pug
-  script(type='text/javascript').
-    if (foo) bar(1 + 5)
-h1 Pug - node template engine
+html
+  head
+    title Pug
+    script(type='text/javascript').
+      if (foo) bar(1 + 5)
+  h1 Pug - node template engine
+  form.dropzone(action='/file-upload')
+    .fallback
+      input(name='file' type='file' multiple='')
+  p#ocr This is where the extract text gonna be.
 
-<script src="javascripts/dropzone.js"></script>
-<link rel="stylesheet" href="stylesheets/dropzone.css">
-
-form.dropzone(action='/file-upload')
-  .fallback
-    input(name='file' type='file' multiple='')
+script(src='javascripts/dropzone.js')
+link(rel='stylesheet' href='stylesheets/dropzone.css')
+script(type='text/javascript').
+  window.onload = function(){
+    document.getElementById('ocr').innerHTML = "New text!";
+  };
 
 <!--
 script(type='text/javascript').
