@@ -5,10 +5,13 @@ html
     script(type='text/javascript').
       if (foo) bar(1 + 5)
   h1 Pug - node template engine
-  form.dropzone(action='/file-upload')
+  form#myAwesomeDropzone.dropzone(action='/file-upload')
     .fallback
       input(name='file' type='file' multiple='')
   p#ocr This is where the extract text gonna be.
+  form(action="/upload" method="post" enctype="multipart/form-data")
+      input(type="file" name="avatar")
+      input(type="submit" value="Upload")
 
 script(src='javascripts/dropzone.js')
 link(rel='stylesheet' href='stylesheets/dropzone.css')
@@ -17,37 +20,43 @@ script(type='text/javascript').
     document.getElementById('ocr').innerHTML = "New text!";
   };
 
-<!--
+
 script(type='text/javascript').
-  Dropzone.options.uploadWidget = {
-  paramName: 'file',
-  maxFilesize: 2, // MB
-  maxFiles: 1,
-  dictDefaultMessage: 'Drag an image here to upload, or click to select one',
-  headers: {
-  'x-csrf-token': document.querySelector('meta[name=csrf-token]').getAttributeNode('content').value,
-  },
-  acceptedFiles: 'image/*',
-  init: function() {
-  this.on('success', function(file, resp){
-  console.log(file);
-  console.log(resp);
-  });
-  this.on('thumbnail', function(file) {
-  if (file.accepted !== false) {
-  if (file.width < 640 || file.height < 480) {
-  file.rejectDimensions();
-  } else {
-  file.acceptDimensions();
-  }
-  }
-  });
-  },
-  accept: function(file, done) {
-  file.acceptDimensions = done;
-  file.rejectDimensions = function() {
-  done('The image must be at least 640 x 480px');
+  Dropzone.options.myAwesomeDropzone = {
+    dictDefaultMessage: 'Drop Here!',
+    paramName: "file", // The name that will be used to transfer the file
+    maxFilesize: 5, // MB
+    addRemoveLinks: true,
+    accept: function(file, done) {
+
+      /*
+      const Http = new XMLHttpRequest();
+      const url='http://localhost:3000/ocr';
+      Http.open("GET", url, true);
+      Http.onreadystatechange = function() {
+        if (Http.readyState === 4) {
+          console.log("done");
+          console.log(Http.responseText);
+          document.getElementById('ocr').innerHTML = Http.responseText;
+        }
+      };
+      
+      Http.send();
+      */
+
+      /*
+      const proxyurl = "https://cors-anywhere.herokuapp.com/";
+      const url = "https://localhost:3000/ocr"; // site that doesn’t send Access-Control-*
+      fetch(url) // https://cors-anywhere.herokuapp.com/https://example.com
+      .then(response => response.text())
+      .then(contents => console.log(contents))
+      .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+      */
+
+    },
+    removedfile: function(file) {
+      var _ref;
+      return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
+    }
   };
-  }
-  };
-  -->
+  
