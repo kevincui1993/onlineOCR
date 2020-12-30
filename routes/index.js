@@ -36,39 +36,6 @@ router.post('/upload', upload.single('avatar'), function(req, res) {
     { logger: m => console.log(m) }
   ).then(({ data: { text } }) => {
     console.log(text);
+    res.status(200).send(text)
   })
-
-  /*
-
-  Tesseract.recognize(filename)
-    .catch(err => console.error(err))
-    .then(function (result) {
-      console.log(result.text)
-      process.exit(0)
-    })
- 
-    
-  const tesseract = require('tesseract.js');
-
-  const config = {
-    lang: "eng",
-    oem: 1,
-    psm: 3,
-  }
-   
-  console.log(path.join('C:\\Users\\KevinCui\\Documents\\onlineocr\\uploads\\' + req.file.originalname))
-  tesseract.recognize('http://tesseract.projectnaptha.com/img/eng_bw.png', config)
-    .then(text => {
-      console.log("Result:", text)
-    })
-    .catch(error => {
-      console.log(error.message)
-    })
-    */
 })
-
-/*
-router.post('/upload', function(req, res) {
-  console.log(req);
-});
-*/

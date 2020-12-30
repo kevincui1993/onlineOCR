@@ -1,25 +1,17 @@
 doctype html
 html
   head
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+
     title Pug
-    script(type='text/javascript').
-      if (foo) bar(1 + 5)
   h1 Pug - node template engine
   form#myAwesomeDropzone.dropzone(action='/file-upload')
     .fallback
       input(name='file' type='file' multiple='')
   p#ocr This is where the extract text gonna be.
-  form(action="/upload" method="post" enctype="multipart/form-data")
-      input(type="file" name="avatar")
-      input(type="submit" value="Upload")
 
 script(src='javascripts/dropzone.js')
 link(rel='stylesheet' href='stylesheets/dropzone.css')
-script(type='text/javascript').
-  window.onload = function(){
-    document.getElementById('ocr').innerHTML = "New text!";
-  };
-
 
 script(type='text/javascript').
   Dropzone.options.myAwesomeDropzone = {
@@ -28,31 +20,18 @@ script(type='text/javascript').
     maxFilesize: 5, // MB
     addRemoveLinks: true,
     accept: function(file, done) {
-
-      /*
-      const Http = new XMLHttpRequest();
-      const url='http://localhost:3000/ocr';
-      Http.open("GET", url, true);
-      Http.onreadystatechange = function() {
-        if (Http.readyState === 4) {
-          console.log("done");
-          console.log(Http.responseText);
-          document.getElementById('ocr').innerHTML = Http.responseText;
-        }
-      };
+      let req = new XMLHttpRequest();
+      let formData = new FormData();
+      formData.append("avatar", file);       
       
-      Http.send();
-      */
-
-      /*
-      const proxyurl = "https://cors-anywhere.herokuapp.com/";
-      const url = "https://localhost:3000/ocr"; // site that doesn’t send Access-Control-*
-      fetch(url) // https://cors-anywhere.herokuapp.com/https://example.com
-      .then(response => response.text())
-      .then(contents => console.log(contents))
-      .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
-      */
-
+      req.onreadystatechange = function() {
+          if (req.readyState == XMLHttpRequest.DONE) {
+              document.getElementById('ocr').innerHTML = req.responseText;
+          }
+      }
+      
+      req.open("POST", '/upload');
+      req.send(formData);
     },
     removedfile: function(file) {
       var _ref;
