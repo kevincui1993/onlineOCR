@@ -9,3 +9,10 @@ services:
     volumes:
       - /app/node_modules
       - .:/app
+  nginx:
+    restart: always
+    build:
+        context: ./nginx
+    ports:
+        - "8080:80"
+  
