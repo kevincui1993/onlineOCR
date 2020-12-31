@@ -6,4 +6,4 @@ before_install:
   - docker build -t onlineocr -f Dockerfile.dev .
 
 script:
-  - docker run onlineocr npm run tet
+  - docker run onlineocr npm run test
