@@ -5,8 +5,5 @@ services:
 before_install:
   - docker build -t onlineocr -f Dockerfile.dev .
 
-before_script: 
-  - chmod 0777 ./node_modules/.bin/mocha
-  
 script:
-  - docker run onlineocr npm run test
+  - docker run onlineocr sh -c "chmod 0777 ./node_modules/.bin/mocha && npm run test"
