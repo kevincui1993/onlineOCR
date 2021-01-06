@@ -1,8 +1,43 @@
+@import "dropzone.css";
+@import "bootstrap.min.css";
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
-  color: #00B7FF;
+  color: #00B7FF; }
+
+#myAwesomeDropzone {
+  width: 100%;
+  /*height: calc(100vh - 200px);*/
+  height: 564px;
+  min-height: 564px;
+}
+
+.adbar {
+  -ms-flex: 0 0 340px;
+  flex: 0 0 340px;
+
+}
+
+.adbar-margin {
+  margin: 2px;
+}
+
+hr{
+  height: 1px;
+  background-color: #ccc;
+  border: none;
+}
+
+h1 {
+  text-align: center;
+}
+
+#ocr {
+  width: 100%;
+  overflow-y: scroll;
+  height: 564px;
+  min-height: 564px;
+  resize: none; /* Remove this if you want the user to resize the textarea */
 }

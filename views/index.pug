@@ -5,20 +5,44 @@ html
 
     title Online OCR Tool
   h1 Online OCR Tool
-  form#myAwesomeDropzone.dropzone(action='/file-upload')
-    .fallback
-      input(name='file' type='file' multiple='')
-  p#ocr This is where the extract text gonna be.
+  
+  .container-fluid
+    .row
+      .col.col-xs-12(style='padding-left:0px;padding-right:2px;')
+        form#myAwesomeDropzone.dropzone(action='/file-upload')
+      .col.hidden-xs.adbar
+        .adbar-margin
+          script(async='' src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+          // html-to-pug new center 1
+          ins.adsbygoogle(style='display:inline-block;width:336px;height:280px' data-ad-client='ca-pub-3546830948652923' data-ad-slot='7213630404' data-adsbygoogle-status='done')
+            ins#aswift_0_expand(style='display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;' tabindex='0' title='Advertisement' aria-label='Advertisement')
+              ins#aswift_0_anchor(style='display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;')
+                iframe#aswift_0(name='aswift_0' style='left:0;position:absolute;top:0;border:0;width:336px;height:280px;' sandbox='allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation' width='336' height='280' frameborder='0' src='https://googleads.g.doubleclick.net/pagead/ads?guci=2.2.0.0.2.2.0.0&client=ca-pub-3546830948652923&output=html&h=280&slotname=7213630404&adk=1257914110&adf=1946173592&pi=t.ma~as.7213630404&w=336&lmt=1584552591&psa=1&format=336x280&url=https%3A%2F%2Fhtml-to-pug.com%2F&flash=0&wgl=1&tt_state=W3siaXNzdWVyT3JpZ2luIjoiaHR0cHM6Ly9hZHNlcnZpY2UuZ29vZ2xlLmNvbSIsInN0YXRlIjowfSx7Imlzc3Vlck9yaWdpbiI6Imh0dHBzOi8vYXR0ZXN0YXRpb24uYW5kcm9pZC5jb20iLCJzdGF0ZSI6MH1d&dt=1609897754837&bpp=9&bdt=500&idt=106&shv=r20201203&cbv=r20190131&ptt=9&saldr=aa&abxe=1&cookie=ID%3De1f2aba7676d1b60-226c62e652c500e9%3AT%3D1607791699%3ART%3D1607791699%3AS%3DALNI_MbPZ-fAqd7HqCAcWSVsbyakKcWZ1g&correlator=6047563919109&frm=20&pv=2&ga_vid=2048981705.1607791699&ga_sid=1609897755&ga_hid=1229075691&ga_fc=0&u_tz=-300&u_his=5&u_java=0&u_h=1440&u_w=2560&u_ah=1400&u_aw=2560&u_cd=24&u_nplug=3&u_nmime=4&adx=1104&ady=230&biw=2543&bih=1329&scr_x=0&scr_y=0&eid=42530671%2C21068946&oid=3&pvsid=2712390109878792&pem=845&ref=https%3A%2F%2Fwww.google.com%2F&rx=0&eae=0&fc=896&brdim=0%2C0%2C0%2C0%2C2560%2C0%2C2560%2C1400%2C2560%2C1329&vis=1&rsz=%7C%7CeE%7C&abl=CS&pfx=0&fu=8192&bc=31&ifi=1&uci=a!1&fsb=1&xpc=CVDnvgKYdj&p=https%3A//html-to-pug.com&dtd=134' marginwidth='0' marginheight='0' vspace='0' hspace='0' allowtransparency='true' scrolling='no' allowfullscreen='true' data-google-container-id='a!1' data-google-query-id='CKT5pL6Yhu4CFZCBUAYdR1UD9A' data-load-complete='true')
+          script.
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        br
+        .adbar-margin
+          script(async='' src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+          // html-to-pug new center 2
+          ins.adsbygoogle(style='display:inline-block;width:336px;height:280px' data-ad-client='ca-pub-3546830948652923' data-ad-slot='2035371636' data-adsbygoogle-status='done')
+            ins#aswift_1_expand(style='display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;' tabindex='0' title='Advertisement' aria-label='Advertisement')
+              ins#aswift_1_anchor(style='display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;')
+                iframe#aswift_1(name='aswift_1' style='left:0;position:absolute;top:0;border:0;width:336px;height:280px;' sandbox='allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation' width='336' height='280' frameborder='0' src='https://googleads.g.doubleclick.net/pagead/ads?guci=2.2.0.0.2.2.0.0&client=ca-pub-3546830948652923&output=html&h=280&slotname=2035371636&adk=1176112434&adf=3563103278&pi=t.ma~as.2035371636&w=336&lmt=1584552591&psa=1&format=336x280&url=https%3A%2F%2Fhtml-to-pug.com%2F&flash=0&wgl=1&tt_state=W3siaXNzdWVyT3JpZ2luIjoiaHR0cHM6Ly9hZHNlcnZpY2UuZ29vZ2xlLmNvbSIsInN0YXRlIjowfSx7Imlzc3Vlck9yaWdpbiI6Imh0dHBzOi8vYXR0ZXN0YXRpb24uYW5kcm9pZC5jb20iLCJzdGF0ZSI6MH1d&dt=1609897754846&bpp=5&bdt=508&idt=158&shv=r20201203&cbv=r20190131&ptt=9&saldr=aa&abxe=1&cookie=ID%3De1f2aba7676d1b60-226c62e652c500e9%3AT%3D1607791699%3ART%3D1607791699%3AS%3DALNI_MbPZ-fAqd7HqCAcWSVsbyakKcWZ1g&prev_fmts=336x280&correlator=6047563919109&frm=20&pv=1&ga_vid=2048981705.1607791699&ga_sid=1609897755&ga_hid=1229075691&ga_fc=0&u_tz=-300&u_his=5&u_java=0&u_h=1440&u_w=2560&u_ah=1400&u_aw=2560&u_cd=24&u_nplug=3&u_nmime=4&adx=1104&ady=533&biw=2543&bih=1329&scr_x=0&scr_y=0&eid=42530671%2C21068946&oid=3&pvsid=2712390109878792&pem=845&ref=https%3A%2F%2Fwww.google.com%2F&rx=0&eae=0&fc=896&brdim=0%2C0%2C0%2C0%2C2560%2C0%2C2560%2C1400%2C2560%2C1329&vis=1&rsz=%7C%7CeE%7C&abl=CS&pfx=0&fu=8192&bc=31&ifi=2&uci=a!2&fsb=1&xpc=I7ZIvYxEyk&p=https%3A//html-to-pug.com&dtd=164' marginwidth='0' marginheight='0' vspace='0' hspace='0' allowtransparency='true' scrolling='no' allowfullscreen='true' data-google-container-id='a!2' data-google-query-id='CL_Cp76Yhu4CFbFi5god1-sDeA' data-load-complete='true')
+          script.
+            (adsbygoogle = window.adsbygoogle || []).push({});
+      .col.col-xs-12(style='padding-left:2px;padding-right:0px;')
+        textarea(readonly='')#ocr This is where the extract text gonna be.
 
 script(src='javascripts/dropzone.js')
-link(rel='stylesheet' href='stylesheets/dropzone.css')
+link(rel='stylesheet' href='stylesheets/style.css')
 
 script(type='text/javascript').
   Dropzone.options.myAwesomeDropzone = {
-    dictDefaultMessage: 'Drop Here!',
+    dictDefaultMessage: 'Upload a file',
     paramName: "file", // The name that will be used to transfer the file
     maxFilesize: 5, // MB
     addRemoveLinks: true,
+    maxFiles: 1,
     accept: function(file, done) {
       let req = new XMLHttpRequest();
       let formData = new FormData();
@@ -26,7 +50,7 @@ script(type='text/javascript').
       
       req.onreadystatechange = function() {
           if (req.readyState == XMLHttpRequest.DONE) {
-              document.getElementById('ocr').innerHTML = req.responseText;
+            document.getElementById('ocr').value = req.responseText;
           }
       }
       
@@ -36,6 +60,13 @@ script(type='text/javascript').
     removedfile: function(file) {
       var _ref;
       return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
-    }
+    },
+    init: function() {
+      this.hiddenFileInput.removeAttribute('multiple');
+      this.on("maxfilesexceeded", function(file) {
+            this.removeAllFiles();
+            this.addFile(file);
+      });
+    }  
   };
   
